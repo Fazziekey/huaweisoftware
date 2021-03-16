@@ -42,6 +42,7 @@ using namespace std;
 class Server
 {
 public:
+	// 初始化服务器
 	void generateServer(string& serverType, string& cpuCores,\
 		string& memorySize, string& serverCost, string& powerCost);
 	// 尝试在服务器上分配虚拟机资源
@@ -58,14 +59,15 @@ public:
 
 private:
 	// 服务器信息
-	unordered_map<string, vector<int>> serverInfos;
+	unordered_map<string, vector<int>> serverInfos;//    serverInfos[_serverType] = vector<int>{ _cpuCores / 2 ,_cpuCores / 2,\
+        _memorySize / 2,_memorySize / 2,_serverCost,_powerCost };
 	// 购买的服务器信息
 	int serverNumber = 0;
 	unordered_map<int, vector<int>> sysServerResource;
 	// 当前开机服务器
 	vector<int> serverRunVms;
 	// 记录虚拟机运行在那个服务器上
-	unordered_map<string, vector<int>> vmOnServer;
+	unordered_map<string, vector<int>> vmOnServer;//    vmInfos[_vmType] = vector<int>{ _vmCpuCores,_vmMemory,_vmTwoNodes };
 	long long serverCost = 0, powerCost = 0, totalCost = 0;
 	int daysNum = 0;
 	// 虚拟机信息

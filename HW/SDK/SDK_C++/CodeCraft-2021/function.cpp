@@ -8,7 +8,7 @@ void Server::generateServer(string& serverType, string& cpuCores, \
     string _serverType = "";
     for (int i = 1; i < serverType.size() - 1; i++) {
         _serverType += serverType[i];
-    }
+    }//读取服务器类型
     int _cpuCores = 0, _memorySize = 0, _serverCost = 0, _powerCost = 0;
 
     for (int i = 0; i < cpuCores.size() - 1; i++) {
